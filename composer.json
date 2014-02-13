@@ -1,0 +1,20 @@
+{
+    "name": "plateau/automaton",
+    "description": "",
+    "authors": [
+        {
+            "name": "Plateau Creations",
+            "email": "codextends@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Plateau\\Automaton": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
