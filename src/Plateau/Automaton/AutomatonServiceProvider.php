@@ -18,7 +18,12 @@ class AutomatonServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		// Registering commands
+		$this->app['command.automaton.run'] = $this->app->share(function($app)
+		{
+			return new \AutomatonRunCommand();
+		});
+		$this->commands('command.automaton.run');	
 	}
 
 	/**

@@ -12,6 +12,10 @@
         "illuminate/support": "4.1.*"
     },
     "autoload": {
+        "classmap" : [
+            "src/migrations",
+            "src/commands"
+        ],
         "psr-0": {
             "Plateau\\Automaton": "src/"
         }
