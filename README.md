@@ -28,6 +28,11 @@ Register the console service provider in `app/config/app.php`:
 );
 ```
 
+Run migrations 
+```
+php artisan migrate --package=plateau/automaton
+```
+
 ## Usage
 
 Soon.
