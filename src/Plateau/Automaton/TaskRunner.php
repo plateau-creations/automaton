@@ -1,7 +1,7 @@
 <?php
 namespace Plateau\Automaton;
 
-use Plateau\Automaton\Utiliies\Timer;
+use Plateau\Automaton\Utilities\Timer;
 use Plateau\Automaton\Contracts\TaskInterface;
 
 

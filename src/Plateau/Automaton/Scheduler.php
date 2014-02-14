@@ -73,7 +73,7 @@ class Scheduler {
 	 * @param  TaskInterface $task
 	 * @return boolean
 	 */
-	protected function runTask(TaskInterface $task)
+	protected function runTask(ScheduledTask $task)
 	{
 		$task->running = true;
 		$task->save();

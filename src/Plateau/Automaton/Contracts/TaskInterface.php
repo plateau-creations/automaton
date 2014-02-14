@@ -1,5 +1,5 @@
 <?php
-namespace Plateau\Automaton;
+namespace Plateau\Automaton\Contracts;
 
 interface TaskInterface {
 

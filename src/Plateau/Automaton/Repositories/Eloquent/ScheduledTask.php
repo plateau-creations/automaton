@@ -1,8 +1,6 @@
 <?php
-namespace Plateau\Automaton;
-
+namespace Plateau\Automaton\Repositories\Eloquent;
 use Eloquent;
-
 
 class ScheduledTask extends Eloquent {
 	
