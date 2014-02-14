@@ -1,6 +1,7 @@
 {
     "name": "plateau/automaton",
     "description": "Task Scheduler for Laravel 4.x",
+    "keywords" : ["laravel", "cron", "task", "scheduler", "automation"],
     "license": "MIT",
     "authors": [
     {
