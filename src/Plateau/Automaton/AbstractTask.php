@@ -10,6 +10,11 @@ abstract class AbstractTask implements TaskInterface{
 	
 	protected $parameters;
 
+	public function __construct(array $parameters = array() )
+	{
+		$this->init($parameters);
+	}
+
 	public function init(array $parameters)
 	{
 		$this->parameters = $parameters;
