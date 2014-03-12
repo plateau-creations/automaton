@@ -67,8 +67,18 @@ $scheduler = new Scheduler();
 // Parameters are accessible from the task object as $this->parameters
 $parameters = array('key' => 'value');
 
-$myTask = new MyTask($parameters);
+$myTask = new MyTask;
+$myTask->init($parameters);
 
 $scheduler->schedule($myTask, '2014-02-17 12:00:00');
 ```
 
+Alternatively you can pass a Carbon object for setting the date :
+```
+$scheduler->schedule($myTask, Carbon::now->addHours(2));
+
+```
+
+It's still a work in progress, any suggestion, PR welcome !
+
+Happy Coding.
