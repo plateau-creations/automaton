@@ -26,7 +26,16 @@ class Scheduler {
 		$newTask->type = get_class($task);
 		$newTask->parameters = serialize($parameters);
 		$newTask->label = $label;
-		$newTask->scheduled_at = $date;
+
+		if (get_class($date) == 'Carbon\Carbon')
+		{
+			$newTask->scheduled_at = $date->toDateTimeString();	
+		}
+		else
+		{
+			$newTask->scheduled_at = $date;	
+		}
+				
 		$newTask->save();
 		return $newTask;
 	}
