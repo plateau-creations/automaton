@@ -20,11 +20,11 @@ class Scheduler {
 	 * @param  array         $parameters
 	 * @return [type]
 	 */
-	public function schedule(TaskInterface $task, $date, $label='', $parameters = array() )
+	public function schedule(TaskInterface $task, $date, $label='')
 	{
 		$newTask = new ScheduledTask();
 		$newTask->type = get_class($task);
-		$newTask->parameters = serialize($parameters);
+		$newTask->parameters = serialize($task->parameters);
 		$newTask->label = $label;
 
 		if (get_class($date) == 'Carbon\Carbon')

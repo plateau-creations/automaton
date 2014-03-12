@@ -8,7 +8,7 @@ use Plateau\Automaton\Contracts\TaskInterface;
 
 abstract class AbstractTask implements TaskInterface{
 	
-	protected $parameters = array();
+	public $parameters = array();
 
 	public function init(array $parameters)
 	{
