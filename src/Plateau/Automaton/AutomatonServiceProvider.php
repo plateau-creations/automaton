@@ -24,6 +24,12 @@ class AutomatonServiceProvider extends ServiceProvider {
 			return new \AutomatonRunCommand();
 		});
 		$this->commands('command.automaton.run');	
+
+		// Register Facade
+		$this->app['automaton'] = $this->app->share(function($app)
+		{
+			return new Scheduler;
+		});
 	}
 
 	/**

@@ -2,6 +2,7 @@
 namespace Plateau\Automaton;
 
 use App;
+use File;
 use Carbon\Carbon;
 use Plateau\Automaton\Contracts\TaskInterface;
 use Plateau\Automaton\Repositories\Eloquent\ScheduledTask;
@@ -46,6 +47,8 @@ class Scheduler {
 	 */
 	public function run()
 	{
+		$this->updateRunningStatus();
+
 		if ($task = $this->getNextTask() )
 		{
 			$this->runTask($task);
@@ -115,4 +118,33 @@ class Scheduler {
 	}
 
 
+	protected function updateRunningStatus()
+	{
+		File::put($this->getLockFile() , time());
+	}
+
+	/**
+	 * Check the running status to check if cron is running
+	 * @return boolean [description]
+	 */
+	public function isRunning()
+	{
+		$lastModified = Carbon::createFromTimestamp(File::get($this->getLockFile() ));
+
+		$now = Carbon::now();
+
+		if($lastModified->diffInMinutes($now) > 2)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	protected function getLockFile()
+	{
+		return storage_path().'/meta/automaton.lock';
+	}
 }
