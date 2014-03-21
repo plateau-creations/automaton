@@ -129,6 +129,11 @@ class Scheduler {
 	 */
 	public function isRunning()
 	{
+		if (! File::exists($this->getLockFile() ))
+		{
+			return false;
+		}
+
 		$lastModified = Carbon::createFromTimestamp(File::get($this->getLockFile() ));
 
 		$now = Carbon::now();
