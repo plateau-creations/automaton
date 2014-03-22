@@ -1,4 +1,4 @@
-# Laravel 4 Automaton Taks Scheduler
+# Laravel 4 Automaton Task Scheduler
 
 Automaton is a task Scheduler for Laravel 4 designed to run as a CronJob. It's designed to run resource intensive tasks with PHP CLI while providing a user friendly way to track down the execution of the tasks.
 
@@ -27,6 +27,12 @@ Register the console service provider in `app/config/app.php`:
 'providers' => array(
 	...
 	'Plateau\Automaton\AutomatonServiceProvider',
+);
+```
+
+Register the facade :
+```php
+	'Automaton' => 'Plateau\Automaton\AutomatonFacade',
 );
 ```
 
@@ -70,15 +76,23 @@ $parameters = array('key' => 'value');
 $myTask = new MyTask;
 $myTask->init($parameters);
 
-$scheduler->schedule($myTask, '2014-02-17 12:00:00');
+Automaton::schedule($myTask, '2014-02-17 12:00:00');
 ```
 
 Alternatively you can pass a Carbon object for setting the date :
 ```
-$scheduler->schedule($myTask, Carbon::now->addHours(2));
+Automaton::schedule($myTask, Carbon::now->addHours(2));
+```
+
+## Scheduling Cron Jobs
+
+If you need your tasks to be run at regular intervals, you can pass cron expression to the scheduler :
+
+```
+// Run a task every minute
+Automaton::cron($myTask, '* * * * *');
 
 ```
 
-It's still a work in progress, any suggestion, PR welcome !
 
-Happy Coding.
+Happy Coding!

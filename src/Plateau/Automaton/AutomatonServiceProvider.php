@@ -18,6 +18,8 @@ class AutomatonServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+		$this->package('plateau/automaton');
+
 		// Registering commands
 		$this->app['command.automaton.run'] = $this->app->share(function($app)
 		{
