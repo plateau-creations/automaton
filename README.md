@@ -66,10 +66,6 @@ class MyTask extends AbstractTask {
 Schedule your task :
 
 ```
-use Plateau\Automaton\Scheduler;
-
-$scheduler = new Scheduler();
-
 // Parameters are accessible from the task object as $this->parameters
 $parameters = array('key' => 'value');
 
