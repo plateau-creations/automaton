@@ -1,6 +1,6 @@
 # Laravel 4 Automaton Task Scheduler
 
-[![Latest Stable Version](https://poser.pugx.org/plateau/automaton/v/stable.png)](https://packagist.org/packages/plateau/automaton) [![Total Downloads](https://poser.pugx.org/plateau/automaton/downloads.png)](https://packagist.org/packages/plateau/automaton) [![Latest Unstable Version](https://poser.pugx.org/plateau/automaton/v/unstable.png)](https://packagist.org/packages/plateau/automaton) [![License](https://poser.pugx.org/plateau/automaton/license.png)](https://packagist.org/packages/plateau/automaton)
+[![Latest Stable Version](https://poser.pugx.org/plateau/automaton/v/stable.png)](https://packagist.org/packages/plateau/automaton) [![Total Downloads](https://poser.pugx.org/plateau/automaton/downloads.png)](https://packagist.org/packages/plateau/automaton)  [![License](https://poser.pugx.org/plateau/automaton/license.png)](https://packagist.org/packages/plateau/automaton)
 
 Automaton is a task Scheduler for Laravel 4 designed to run as a CronJob. It's designed to run resource intensive tasks with PHP CLI while providing a user friendly way to track down the execution of the tasks.
 
