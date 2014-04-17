@@ -139,7 +139,7 @@ class Scheduler {
 			
 			if (! $cron->isDue() )
 			{
-				$crons->forget($cron->id);
+				$crons->forget($cronTask->id);
 			}
 		}
 		
