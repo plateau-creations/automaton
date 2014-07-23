@@ -16,7 +16,7 @@ class AddCronExpressionSupport extends Migration {
 		Schema::table('scheduled_tasks', function(Blueprint $table)
 		{
 			$table->boolean('is_cron')->default(false);
-			$table->string('cron_expression', 20);
+			$table->string('cron_expression', 20)->nullable();
 		});
 
 		Schema::create('cron_logs', function(Blueprint $table)
